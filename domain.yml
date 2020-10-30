@@ -27,7 +27,11 @@ slots:
   diet:
     type: unfeaturized
   exercise:
-    type: unfeaturized
+    type: category
+    values:
+    - run
+    - sleep
+    - walk
   goal:
     type: unfeaturized
   sleep:
