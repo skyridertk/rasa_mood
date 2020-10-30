@@ -1,0 +1,76 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- ask_lower_stress
+- ask_eat_healthy
+- ask_exercise
+- inform
+- out_of_scope
+- thankyou
+entities:
+- exercise
+- sleep
+- stress
+slots:
+  confirm_exercise:
+    type: unfeaturized
+  diet:
+    type: unfeaturized
+  exercise:
+    type: unfeaturized
+  goal:
+    type: unfeaturized
+  sleep:
+    type: unfeaturized
+  stress:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hey! Its time for your check
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_stress_info:
+  - text: Its ok to feel overwhelmed at times
+  utter_exercise_info:
+  - text: Most health adults should aim to get about 150 of moderate exercise
+  utter_diet_info:
+  - text: A healthy diet includes fruits and vegetables
+  utter_ask_confirm_exercise:
+  - text: Did you exercise yesterday?
+  utter_ask_sleep:
+  - text: How much did you sleep last night?
+  utter_ask_exercise:
+  - text: What kind of exercise did you do?
+  utter_ask_diet:
+  - text: Did you eat healthy diet yesterday?
+  utter_ask_stress:
+  - text: Whats your level of stress?
+  utter_ask_goal:
+  - text: What are your goals?
+  utter_slots_values:
+  - text: "Here's your daily wellness - Exercised?: {confirm_exercise} - Type of exercise:\
+      \ {exercise} - Sleep: {sleep} - Diet: {diet} - Stress level: {stress} - Goal:\
+      \ {goal} "
+  utter_no_worries:
+  - text: No problem :)
+  utter_ask_continue:
+  - text: Sorry, I dont quite understand. Do you want to continue?
+forms:
+- health_form
