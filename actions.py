@@ -36,7 +36,7 @@ class HealthForm(FormAction):
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         return {
             "confirm_exercise": [
-                self.from_intent(intent="affirm", value=True),
+                self.from_intent(intent="greet", value=True),
                 self.from_intent(intent="deny", value=False),
                 self.from_intent(intent="inform", value=True)
             ],
