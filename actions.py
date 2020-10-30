@@ -30,33 +30,7 @@ def create_health_log(confirm_exercise, exercise, sleep, diet, stress, goal):
     #print(resp.raise_for_status)
 
 class HealthForm(FormAction):
-    def name(self):
-        return "health_form"
     
-    @staticmethod
-    def required_slots(tracker):
-
-        if tracker.get_slot("confirm_exercise") == True:
-            return ["confirm_exercise", "exercise", "sleep", "diet", "stress", "goal"]
-        else:
-            return ["confirm_exercise", "sleep", "diet", "stress", "goal"]
-    
-    def submit(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any]
-    ) -> List[Dict]:
-        resp = create_health_log(
-            tracker.get_slot("confirm_exercise"),
-            tracker.get_slot("exercise"),
-            tracker.get_slot("sleep"),
-            tracker.get_slot("diet"),
-            tracker.get_slot("stress"),
-            tracker.get_slot("goal")
-        )
-
-        dispatcher.utter_message("Thanks, your answers have been recorded!")
         return []
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
