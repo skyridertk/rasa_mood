@@ -24,34 +24,9 @@ base_id = os.getenv("BASE_ID")
 table_name = os.getenv("TABLE_NAME")
 
 def create_health_log(confirm_exercise, exercise, sleep, diet, stress, goal):
-    request_url = f"https://api.airtable.com/v0/{base_id}/{table_name}"
+    
 
-    headers = {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "Authorization": f"Bearer {airtable_api_key}"
-    }
-
-    data = {
-        "fields": {
-            "Exercised?": confirm_exercise,
-            "Type of exercise": exercise,
-            "Amount of sleep": sleep,
-            "Stress": stress,
-            "Diet": diet,
-            "Goal": goal
-        }
-    }
-
-    try:
-        resp = requests.post(url=request_url, json=data, headers=headers)
-
-        resp.raise_for_status()
-
-    except requests.exceptions.HTTPError as err:
-        raise SystemExit(err)
-
-    return resp
+    return ""
     #print(resp.raise_for_status)
 
 class HealthForm(FormAction):
